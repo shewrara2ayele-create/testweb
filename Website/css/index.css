@@ -11,14 +11,13 @@ body {
 }
 
 /* PERFORMANCE OPTIMIZATIONS */
-/* Removed heavy effects on mobile */
 @media (max-width: 768px) {
     .principles-section {
         background-attachment: scroll !important;
     }
     
     .principle-card {
-        background: rgba(60, 35, 35, 0.95) !important; /* More opaque fallback */
+        background: rgba(60, 35, 35, 0.95) !important;
     }
 }
 
@@ -246,7 +245,6 @@ body {
     background-attachment: fixed;
     padding: 80px 40px;
     color: rgba(255, 253, 246, 255);
-    /* GPU acceleration */
     transform: translate3d(0,0,0);
     will-change: transform;
     backface-visibility: hidden;
@@ -260,7 +258,6 @@ body {
     height: 100%;
     background: rgba(60, 35, 35, 0.85);
     z-index: 1;
-    /* GPU acceleration */
     transform: translate3d(0,0,0);
     will-change: transform;
 }
@@ -270,7 +267,6 @@ body {
     z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
-    /* GPU acceleration */
     transform: translate3d(0,0,0);
     will-change: transform;
 }
@@ -282,10 +278,8 @@ body {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-    /* Replace backdrop-filter with pre-blurred image */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="blur"><feGaussianBlur stdDeviation="4" /></filter><rect width="100%" height="100%" filter="url(%23blur)" fill="rgba(60,35,35,0.7)" /></svg>');
     background-size: cover;
-    /* GPU acceleration */
     transform: translate3d(0,0,0);
     will-change: transform;
     backface-visibility: hidden;
@@ -298,7 +292,6 @@ body {
     justify-content: center;
     padding: 30px;
     background: rgba(255, 253, 246, 0.1);
-    /* GPU acceleration */
     transform: translate3d(0,0,0);
 }
 
@@ -320,7 +313,6 @@ body {
     position: relative;
     padding-bottom: 15px;
     display: inline-block;
-    width: auto;
 }
 
 .principle-title::after {
@@ -333,12 +325,29 @@ body {
     background: rgba(255, 253, 246, 255);
 }
 
+/* Right align only Vision and Values titles */
+.principle-card.reversed:nth-child(4) .principle-title,
+.principle-card.reversed:nth-child(5) .principle-title {
+    float: right;
+}
+
+.principle-card.reversed:nth-child(4) .principle-title::after,
+.principle-card.reversed:nth-child(5) .principle-title::after {
+    left: 0;
+    width: 100%;
+}
+
+.principle-text {
+    clear: both;
+}
+
 .principle-text p {
     font-size: 1.4rem;
     line-height: 1.8;
     margin-bottom: 20px;
     position: relative;
     padding-left: 30px;
+    text-align: left;
 }
 
 .principle-text p::before {
@@ -390,17 +399,6 @@ body {
     flex-direction: row-reverse;
 }
 
-/* Align Vision and Values titles to the right */
-.principle-card.reversed:nth-child(4) .principle-content,
-.principle-card.reversed:nth-child(5) .principle-content {
-    text-align: right;
-}
-
-.principle-card.reversed:nth-child(4) .principle-content .principle-title,
-.principle-card.reversed:nth-child(5) .principle-content .principle-title {
-    display: inline-block;
-}
-
 /* Responsive Design */
 @media (max-width: 992px) {
     .principle-card {
@@ -445,14 +443,11 @@ body {
     }
     
     /* Center Vision and Values titles on mobile */
-    .principle-card.reversed:nth-child(4) .principle-content,
-    .principle-card.reversed:nth-child(5) .principle-content {
+    .principle-card.reversed:nth-child(4) .principle-title,
+    .principle-card.reversed:nth-child(5) .principle-title {
+        float: none;
         text-align: center;
-    }
-    
-    .principle-card.reversed:nth-child(4) .principle-content .principle-title,
-    .principle-card.reversed:nth-child(5) .principle-content .principle-title {
-        display: inline-block;
+        display: block;
     }
 }
 
@@ -522,7 +517,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Changed from center to flex-start */
+    align-items: flex-start;
 }
 
 .loan-card {
@@ -537,7 +532,7 @@ body {
     align-items: center;
     margin-bottom: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    align-self: center; /* Center the card within the flex-start container */
+    align-self: center;
 }
 
 .loan-amount {
@@ -555,7 +550,7 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: left; /* Ensure text alignment for the list */
+    text-align: left;
 }
 
 .guarantee-list li {
