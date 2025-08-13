@@ -21,7 +21,6 @@
                 <ul>
                     <li>09-74-60-90-91</li>
                     <li>09-74-60-94-14</li>
-                    <li>ኢሜል: info@example.com</li>
                 </ul>
             </div>
         </div>
