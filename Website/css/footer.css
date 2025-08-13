@@ -1,0 +1,177 @@
+footer {
+    background-color: rgba(36, 36, 35, 255);
+    color: rgba(255, 253, 246, 255);
+    padding: 50px 0 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-top {
+    padding: 0 40px 40px;
+}
+
+.footer-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.footer-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: rgba(255, 253, 246, 255);
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.column {
+    flex: 1;
+}
+
+.column h3 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.column ul li {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.column ul li a {
+    color: rgba(255, 253, 246, 255);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.column ul li a:hover {
+    opacity: 0.8;
+}
+
+.column-left {
+    text-align: left;
+    padding-right: 30px;
+}
+
+.column-center {
+    text-align: center;
+    padding: 0 15px;
+}
+
+.column-right {
+    text-align: right;
+    padding-left: 30px;
+}
+
+.footer-divider {
+    height: 1px;
+    background: rgba(255, 253, 246, 0.2);
+    width: 100%;
+}
+
+.footer-bottom {
+    padding: 25px 40px;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.company-copyright {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-name {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.footer-menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-menu ul li {
+    margin-left: 30px;
+}
+
+.footer-menu ul li a {
+    color: rgba(255, 253, 246, 255);
+    text-decoration: none;
+    font-size: 16px;
+    transition: opacity 0.3s;
+}
+
+.footer-menu ul li a:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column;
+    }
+    
+    .column {
+        padding: 15px 0 !important;
+        text-align: center !important;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .company-copyright {
+        margin-bottom: 20px;
+    }
+    
+    .footer-menu ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .footer-menu ul li {
+        margin: 5px 15px;
+    }
+    
+    .footer-title {
+        font-size: 28px;
+    }
+    
+    .column h3 {
+        font-size: 20px;
+    }
+    
+    .column ul li {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,177 @@
+/* Base Styles */
+.prerequisites-container {
+    background-color: rgba(255, 253, 246, 255);
+    padding: 60px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.prerequisites-title {
+    color: rgba(61, 32, 37, 255);
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 0 60px 120px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.prerequisites-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    height: 3px;
+    background: rgba(61, 32, 37, 255);
+}
+
+.prerequisites-section {
+    margin-bottom: 60px;
+}
+
+.section-subtitle {
+    color: rgba(61, 32, 37, 255);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.requirements-list,
+.business-list {
+    color: rgba(61, 32, 37, 255);
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.requirements-list {
+    list-style-type: decimal;
+    padding-left: 40px;
+}
+
+.business-list {
+    list-style-type: none;
+    padding-left: 40px;
+}
+
+.requirements-list li,
+.business-list li {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.business-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(61, 32, 37, 255);
+    border-radius: 50%;
+}
+
+.nested-list {
+    list-style-type: none;
+    padding-left: 25px;
+    margin-top: 10px;
+}
+
+.nested-list li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+}
+
+.nested-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(61, 32, 37, 255);
+    border-radius: 50%;
+}
+
+.section-divider {
+    height: 2px;
+    background: rgba(61, 32, 37, 255);
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .prerequisites-container {
+        padding: 60px 30px 50px;
+    }
+    .prerequisites-title {
+        margin-left: 80px;
+    }
+}
+
+@media (max-width: 992px) {
+    .prerequisites-title {
+        font-size: 3rem;
+        margin-left: 60px;
+    }
+    .section-subtitle {
+        font-size: 2.2rem;
+    }
+    .requirements-list,
+    .business-list {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .prerequisites-container {
+        padding: 40px 20px 40px;
+    }
+    .prerequisites-title {
+        font-size: 2.5rem;
+        margin-left: 40px;
+        padding-bottom: 15px;
+    }
+    .section-subtitle {
+        font-size: 2rem;
+    }
+    .requirements-list,
+    .business-list {
+        font-size: 1.1rem;
+        padding-left: 15px;
+    }
+    .section-divider {
+        margin: 40px auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .prerequisites-container {
+        padding: 30px 15px 30px;
+    }
+    .prerequisites-title {
+        font-size: 2.2rem;
+        margin-left: 20px;
+    }
+    .section-subtitle {
+        font-size: 1.8rem;
+    }
+    .requirements-list,
+    .business-list {
+        font-size: 1rem;
+        padding-left: 10px;
+    }
+    .nested-list {
+        padding-left: 15px;
+    }
+    .section-divider {
+        margin: 30px auto;
+    }
+}

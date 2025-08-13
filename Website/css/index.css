@@ -1,0 +1,637 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* PERFORMANCE OPTIMIZATIONS */
+/* Removed heavy effects on mobile */
+@media (max-width: 768px) {
+    .principles-section {
+        background-attachment: scroll !important;
+    }
+    
+    .principle-card {
+        background: rgba(60, 35, 35, 0.95) !important; /* More opaque fallback */
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-text {
+    flex: 1;
+    background-color: rgba(14, 158, 202, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px;
+    height: 100vh;
+}
+
+.company-name-am {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: rgba(60, 35, 35, 255);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.company-name-en {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(60, 35, 35, 255);
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+
+.hero-tagline {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(60, 35, 35, 255);
+    margin-bottom: 50px;
+}
+
+.hero-button {
+    background: transparent;
+    color: rgba(255, 253, 246, 255);
+    border: 3px solid rgba(255, 253, 246, 255);
+    border-radius: 0;
+    padding: 18px 45px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.hero-button:hover {
+    background: rgba(255, 253, 246, 0.1);
+}
+
+.hero-image {
+    flex: 1;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .company-name-am {
+        font-size: 3rem;
+    }
+    
+    .hero-tagline {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+    }
+    
+    .hero-text {
+        height: auto;
+        padding: 80px 40px;
+    }
+    
+    .hero-image {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .company-name-am {
+        font-size: 2.5rem;
+    }
+    
+    .company-name-en {
+        font-size: 1.2rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1.8rem;
+    }
+    
+    .hero-button {
+        font-size: 1.5rem;
+        padding: 15px 35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text {
+        padding: 60px 25px;
+    }
+    
+    .company-name-am {
+        font-size: 2rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1.6rem;
+    }
+}
+
+/* About Section */
+.about-section {
+    background-color: rgba(255, 253, 246, 255);
+    padding: 80px 40px;
+}
+
+.about-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image {
+    flex: 1.2;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: 500px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-title {
+    font-size: 2.8rem;
+    color: rgba(60, 35, 35, 255);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.about-text {
+    font-size: 1.3rem;
+    color: rgba(60, 35, 35, 255);
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .about-image {
+        width: 100%;
+        height: 400px;
+    }
+    
+    .about-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 25px;
+    }
+    
+    .about-title {
+        font-size: 2.2rem;
+    }
+    
+    .about-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Combined Principles & Vision Section */
+.principles-section {
+    position: relative;
+    background-image: url('../images/section3-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 40px;
+    color: rgba(255, 253, 246, 255);
+    /* GPU acceleration */
+    transform: translate3d(0,0,0);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.principles-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(60, 35, 35, 0.85);
+    z-index: 1;
+    /* GPU acceleration */
+    transform: translate3d(0,0,0);
+    will-change: transform;
+}
+
+.principles-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* GPU acceleration */
+    transform: translate3d(0,0,0);
+    will-change: transform;
+}
+
+.principle-card {
+    display: flex;
+    margin-bottom: 60px;
+    background: rgba(60, 35, 35, 0.7);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    /* Replace backdrop-filter with pre-blurred image */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="blur"><feGaussianBlur stdDeviation="4" /></filter><rect width="100%" height="100%" filter="url(%23blur)" fill="rgba(60,35,35,0.7)" /></svg>');
+    background-size: cover;
+    /* GPU acceleration */
+    transform: translate3d(0,0,0);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.principle-image {
+    flex: 0 0 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(255, 253, 246, 0.1);
+    /* GPU acceleration */
+    transform: translate3d(0,0,0);
+}
+
+.principle-image img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+}
+
+.principle-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.principle-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+    display: inline-block;
+    width: auto;
+}
+
+.principle-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 253, 246, 255);
+}
+
+.principle-text p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.principle-text p::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-size: 2rem;
+    line-height: 1.4;
+}
+
+.principle-divider {
+    height: 1px;
+    background: rgba(255, 253, 246, 0.5);
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Internal Divider */
+.internal-divider {
+    height: 1px;
+    background: rgba(255, 253, 246, 0.3);
+    width: 90%;
+    max-width: 1080px;
+    margin: 60px auto;
+    position: relative;
+}
+
+.internal-divider::before,
+.internal-divider::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 253, 246, 0.3);
+    border-radius: 50%;
+}
+
+.internal-divider::before {
+    left: -15px;
+}
+
+.internal-divider::after {
+    right: -15px;
+}
+
+/* Reverse layout for vision & values cards */
+.reversed {
+    flex-direction: row-reverse;
+}
+
+/* Align Vision and Values titles to the right */
+.principle-card.reversed:nth-child(4) .principle-content,
+.principle-card.reversed:nth-child(5) .principle-content {
+    text-align: right;
+}
+
+.principle-card.reversed:nth-child(4) .principle-content .principle-title,
+.principle-card.reversed:nth-child(5) .principle-content .principle-title {
+    display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .principle-card {
+        flex-direction: column;
+    }
+    
+    .reversed {
+        flex-direction: column;
+    }
+    
+    .principle-image {
+        flex: 0 0 auto;
+        padding: 20px;
+    }
+    
+    .principle-content {
+        padding: 30px;
+    }
+    
+    .internal-divider {
+        margin: 40px auto;
+        width: 85%;
+    }
+}
+
+@media (max-width: 768px) {
+    .principles-section {
+        padding: 60px 25px;
+        background-attachment: scroll;
+    }
+    
+    .principle-title {
+        font-size: 2.2rem;
+    }
+    
+    .principle-text p {
+        font-size: 1.2rem;
+    }
+    
+    .internal-divider {
+        margin: 30px auto;
+    }
+    
+    /* Center Vision and Values titles on mobile */
+    .principle-card.reversed:nth-child(4) .principle-content,
+    .principle-card.reversed:nth-child(5) .principle-content {
+        text-align: center;
+    }
+    
+    .principle-card.reversed:nth-child(4) .principle-content .principle-title,
+    .principle-card.reversed:nth-child(5) .principle-content .principle-title {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 576px) {
+    .principle-title {
+        font-size: 2rem;
+    }
+    
+    .principle-text p {
+        font-size: 1.1rem;
+        padding-left: 25px;
+    }
+    
+    .principle-image {
+        padding: 15px;
+    }
+    
+    .internal-divider {
+        margin: 25px auto;
+        width: 80%;
+    }
+}
+
+/* Loan Section */
+.loan-section {
+    background-color: rgba(14, 158, 202, 255);
+    padding: 80px 40px;
+    color: rgba(60, 35, 35, 255);
+}
+
+.loan-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.service-text {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.title-line {
+    height: 3px;
+    width: 200px;
+    background: rgba(60, 35, 35, 255);
+    margin: 0 auto;
+}
+
+.loan-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.loan-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Changed from center to flex-start */
+}
+
+.loan-card {
+    width: 100%;
+    height: 220px;
+    background-image: url('../images/loan-bg.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    align-self: center; /* Center the card within the flex-start container */
+}
+
+.loan-amount {
+    color: rgba(242, 251, 255, 255);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 90%;
+}
+
+.guarantee-list {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Ensure text alignment for the list */
+}
+
+.guarantee-list li {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+    padding-left: 25px;
+    color: rgba(255, 253, 246, 255);
+}
+
+.guarantee-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 253, 246, 255);
+    border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .loan-columns {
+        flex-wrap: wrap;
+    }
+    
+    .loan-column {
+        flex: 0 0 calc(50% - 30px);
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .loan-section {
+        padding: 60px 25px;
+    }
+    
+    .section-title {
+        font-size: 2.4rem;
+    }
+    
+    .loan-column {
+        flex: 0 0 100%;
+    }
+    
+    .service-text {
+        font-size: 1.6rem;
+    }
+    
+    .loan-amount {
+        font-size: 1.6rem;
+    }
+    
+    .guarantee-list li {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .title-line {
+        width: 150px;
+    }
+    
+    .loan-card {
+        height: 180px;
+    }
+    
+    .guarantee-list li {
+        font-size: 1.2rem;
+    }
+}
